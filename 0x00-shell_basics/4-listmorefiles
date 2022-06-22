@@ -1,1 +1,2 @@
-#!/bin/bashls -al
+#!/bin/bash
+ls -al
