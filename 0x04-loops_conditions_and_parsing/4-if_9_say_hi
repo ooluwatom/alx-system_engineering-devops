@@ -9,7 +9,6 @@ do
   if [ $count == 8 ]
   then
     echo "Hi"
-    echo "Best School"
   fi
   (( count++ ))
 done
