@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This script prints Best School, goodluck at 8 and bad luck at 10
+
+count=1
+
+while [ $count -lt 21 ]
+do
+
+case $count ==
+  4)
+    echo "bad luck from China"
+    ;;
+
+  9)
+    echo "bad luck from Japan"
+    ;;
+  
+  17)
+    echo "bad luck from Italy"
+    ;;
+
+  *)
+    echo $count
+    ;;
+esac
+done
