@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script prints Best School, goodluck at 8 and bad luck at 10
+
+count=0
+
+while [ $count -lt 10 ]
+do
+  if [ $count == 7 ]
+  then
+    echo "good luck"
+  elif [ $count == 3 ]
+  then
+    echo "bad luck"
+  else
+  echo "Best School"
+  fi
+  (( count++ ))
+done
