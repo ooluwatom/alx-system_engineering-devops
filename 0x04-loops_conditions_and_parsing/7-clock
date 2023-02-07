@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script prints Best School, goodluck at 8 and bad luck at 10
+
+hour=0
+
+while [ $count -lt "13" ]
+do
+
+  echo "Hour: " + $hour
+  minute=1
+    while [ $count -lt "60" ]
+    do
+
+      echo $minute
+      (( minute++ ))
+    done
+
+  (( hour++ ))
+done
