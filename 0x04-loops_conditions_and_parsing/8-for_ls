@@ -7,6 +7,6 @@ for entry in $(ls $search_dir)
 do
   temp=${entry%$search_string*}
   foo=${entry#"$temp"}
-  foo=${entry#"$search_string"}
-  echo $entry
+  foo=${foo#"$search_string"}
+  echo $foo
 done
