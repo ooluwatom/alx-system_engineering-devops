@@ -3,7 +3,7 @@
 
 count=1
 
-while [ $count -lt "21" ]
+while [ $count -lt "101" ]
 do
   if [ $count % 3 == 0 ] && [ $count % 5 == 0 ]
   then
