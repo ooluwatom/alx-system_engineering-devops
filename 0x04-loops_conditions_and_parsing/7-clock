@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script prints Best School, goodluck at 8 and bad luck at 10
+# This script prints time up to 12:59
 
 hour=0
 

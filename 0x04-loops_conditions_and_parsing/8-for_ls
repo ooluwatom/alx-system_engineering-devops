@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script prints a list of all the files in the directory
+
+search_dir="$(pwd)"
+search_string="-"
+for entry in $(ls $search_dir)
+do
+  temp=${entry%$search_string*}
+  echo $temp
+done
