@@ -6,5 +6,5 @@ search_string="-"
 for entry in $(ls $search_dir)
 do
   temp=${entry%$search_string*}
-  echo $temp
+  echo $entry
 done
