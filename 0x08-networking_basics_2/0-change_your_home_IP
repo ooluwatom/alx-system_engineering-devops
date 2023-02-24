@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 # This script resolves localhost and facebook.com
-# Backup the original hosts file
-sudo cp /etc/hosts /etc/hosts.bak
+# Configures a Ubuntu server with specific IP addresses
+# to `localhost` and `facebook.com` hostname
 
-# Set localhost to 127.0.0.2
-sed -i s/^127.*localhost$/127.0.0.2\ localhost/ /etc/hosts
-
-# Add facebook.com to 8.8.8.8
-echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
-
-# Restart networking service
-sudo systemctl restart networking.service
+cp /etc/hosts ~/hosts.new
+sed -i s/^127.*localhost$/127.0.0.2\ localhost/ ~/hosts.new
+echo "8.8.8.8 facebook.com" >> ~/hosts.new
+cat ~/hosts.new > /etc/hosts
