@@ -10,4 +10,5 @@ for interface in $interfaces; do
     if [[ -n $ipv4 ]]; then
         echo "$interface: $ipv4"
     fi# get all active network interfaces
+done
 interfaces=$(ifconfig | grep -Eo '^[a-zA-Z0-9]+' | tr '\n' ' ')
