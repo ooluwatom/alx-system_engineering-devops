@@ -1,5 +1,5 @@
 # Installing a package, using puppet
-exec { 'install ruby':
+exec { 'install flask':
   command => '/usr/bin/apt-get install -y ruby'
 }
 
