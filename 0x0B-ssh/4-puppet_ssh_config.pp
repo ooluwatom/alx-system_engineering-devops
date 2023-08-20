@@ -1,4 +1,4 @@
-# Modify client config file
+# Modifying client config file
 include stdlib
 
 file_line {
@@ -10,5 +10,5 @@ file_line {
   'key_location':
     ensure => present,
     path   => '/etc/ssh/ssh_config',
-    line   => '    IdentityFile ~/.ssh/holberton'
+    line   => '    IdentityFile ~/.ssh/school'
 }
