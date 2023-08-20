@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Script that creates an SSH key pair
-ssh-keygen -b 4096 -N betty -f school
+openssl genpkey -algorithm RSA -out school.key -aes256 -pass pass:betty -pkeyopt rsa_keygen_bits:4096
