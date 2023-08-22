@@ -1,13 +1,18 @@
 # Install and configure my nginx server using Puppet
-package { 'jfryman-nginx':
-  ensure => installed,
+
+exec { 'update':
+  command => '/usr/bin/apt-get update',
+  path    => '/usr/bin',
 }
 
-include nginx
+package { 'nginx':
+  ensure => installed,
+  require => Exec['update'],
+}
 
-class { 'nginx':
-  manage_repo    => true,
-  package_source => 'nginx-stable',
+file { 'index':
+  path    => '/var/www/html/index.nginx-debian.html',
+  content => 'Hello World!',
 }
 
 nginx::resource::server { '	3.80.18.115':
@@ -16,7 +21,9 @@ nginx::resource::server { '	3.80.18.115':
   vhost_cfg_append => { 'rewrite' => '^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent' },
 }
 
-file { 'index':
-  path    => '/var/www/html/index.nginx-debian.html',
-  content => 'Hello World!',
+service { 'nginx':
+  ensure => running,
+  enable => true,
+  require => Package['nginx'],
 }
+
