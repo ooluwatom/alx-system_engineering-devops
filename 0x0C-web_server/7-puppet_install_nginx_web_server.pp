@@ -15,15 +15,13 @@ file { 'index':
   content => 'Hello World!',
 }
 
-nginx::resource::server { '	3.80.18.115':
-  listen_port      => 80,
-  www_root         => '/var/www/html/',
-  vhost_cfg_append => { 'rewrite' => '^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent' },
+exec {'redirect_me':
+	command => 'sed -i "24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
+	provider => 'shell'
 }
 
 service { 'nginx':
   ensure => running,
-  enable => true,
   require => Package['nginx'],
 }
 
