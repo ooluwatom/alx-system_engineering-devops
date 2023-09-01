@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script to debug  a stopped Apache server
+# IP="$(curl ifconfig.me)"
+
+# Set ServerName to IP
+# sudo sed -i "s/#ServerName www.example.com/ServerName $IP/" /etc/apache2/sites-available/000-default.conf
+
+# Start the Apache
+sudo service apache2 start
