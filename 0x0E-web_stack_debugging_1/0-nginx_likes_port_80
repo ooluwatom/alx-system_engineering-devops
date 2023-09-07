@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Bash script to configure the nginx server for connection on port 80
+# A Bash script to configure the nginx server for a connection on port 80
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
